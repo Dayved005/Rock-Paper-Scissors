@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <p class="title">Rock Paper Scissors</p>
+    <button onclick="
+      playGame('rock');
+      document.querySelector('.js-reset')
+          .innerHTML = '';
+    " class="move-button">
+      <img src="images/rock-emoji.png" alt="rock image" class="move-icon">
+    </button>
+
+    <button onclick="
+      playGame('paper');
+      document.querySelector('.js-reset')
+          .innerHTML = '';
+    " class="move-button">
+      <img src="images/paper-emoji.png" alt="paper image" class="move-icon">
+    </button>
+
+    <button onclick="
+      playGame('scissors');
+      document.querySelector('.js-reset')
+          .innerHTML = '';
+    " class="move-button">
+      <img src="images/scissors-emoji.png" alt="Scissors image" class="move-icon">
+    </button>
+
+    <p class="js-result result"></p>
+    <p class="js-moves"></p>
+    <p class="js-score score"></p>
+    <p class="js-reset"></p>
+
+    <button onclick="
+      score.wins = 0;
+      score.losses = 0;
+      score.ties = 0;
+      localStorage.removeItem('score');
+      updateScoreElement();
+      document.querySelector('.js-reset')
+          .innerHTML = 'The score has been reset.';
+      document.querySelector('.js-moves').innerHTML = '';
+      document.querySelector('.js-result').innerHTML = '';
+    " class="reset-score-button">
+      Reset Score
+    </button>
+
+    
+
+    <!-- When writting JavaScript code the best strategy is to think about what strategy (The thought about strategy is called an alogorithm) to use then covert the strategy code.-->
+    <script src="main.js"></script>
+  </body>
+</html>
