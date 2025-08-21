@@ -25,23 +25,15 @@
     <p class="js-score score"></p>
     <p class="js-reset"></p>
 
-    <button onclick="
-      score.wins = 0;
-      score.losses = 0;
-      score.ties = 0;
-      localStorage.removeItem('score');
-      updateScoreElement();
-      document.querySelector('.js-reset')
-          .innerHTML = 'The score has been reset.';
-      document.querySelector('.js-moves').innerHTML = '';
-      document.querySelector('.js-result').innerHTML = '';
-    " class="reset-score-button">
+    <button class="reset-score-button js-reset-score-btn">
       Reset Score
     </button>
 
     <button class="js-auto-play-button auto-play-button" >
       Auto Play
     </button>
+
+    <p class="js-reset-confirmation"></p>
 
     <!-- When writting JavaScript code the best strategy is to think about what strategy (The thought about strategy is called an alogorithm) to use then covert the strategy code.-->
     <script src="main.js"></script>

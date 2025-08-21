@@ -89,6 +89,14 @@ document.body.addEventListener('keydown', (event) => {
     playGame('scissors');
     document.querySelector('.js-reset')
       .innerHTML = '';
+  } else if (event.key === 'a') {
+    autoPlay();
+    document.querySelector('.js-reset')
+      .innerHTML = '';
+  } else if (event.key === 'Backspace') {
+    resetScore();
+    document.querySelector('.js-reset')
+      .innerHTML = '';
   }
 });
 
@@ -169,4 +177,55 @@ function pickComputerMove() {
 
   return computerMove;
   // return is used to get a value out of a function.
+}
+
+function resetScore() {
+  score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+
+    localStorage.removeItem('score');
+    updateScoreElement();
+
+    document.querySelector('.js-reset')
+      .innerHTML = 'The score has been reset.';
+
+    document.querySelector('.js-moves').innerHTML = '';
+    document.querySelector('.js-result').innerHTML = '';
+}
+
+document.querySelector('.js-reset-score-btn')   
+  .addEventListener('click', () => {
+    // resetScore();
+
+    showResetConfirmation();
+});
+
+function showResetConfirmation() {
+  document.querySelector('.js-reset-confirmation')
+    .innerHTML = `
+      Are you sure you want to reset the score?
+      <button class="js-confirm-reset-yes reset-confirm-button">
+        Yes
+      </button>
+      <button class="js-confirm-reset-no reset-confirm-button">
+        No
+      </button>
+    `;
+
+    document.querySelector('.js-confirm-reset-yes')
+      .addEventListener('click', () => {
+        resetScore();
+        hideResetConfirmation();
+      });
+
+    document.querySelector('.js-confirm-reset-no')
+      .addEventListener('click', () => {
+        hideResetConfirmation();
+      });
+}
+
+function hideResetConfirmation() {
+  document.querySelector('.js-reset-confirmation')
+    .innerHTML = '';
 }

@@ -1,62 +1,67 @@
 body {
-background-color: rgb(25, 25, 25);
-color: white;
-font-family: Arial, sans-serif;
+  background-color: rgb(25, 25, 25);
+  color: white;
+  font-family: Arial, sans-serif;
 }
 
 .title {
-font-size: 30px;
-font-weight: bold;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .move-icon {
-height: 50px;
+  height: 50px;
 }
 
 .move-button {
-background-color: transparent;
-border: 3px solid white;
-width: 120px;
-height: 120px;
-border-radius: 50%;
-margin-right: 10px;
-cursor: pointer;
-transition: background-color 0.3s ease;
+  background-color: transparent;
+  border: 3px solid white;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .move-button:hover {
-background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .result {
-font-size: 25px;
-margin-top: 50px;
-font-weight: bold;
+  font-size: 25px;
+  margin-top: 50px;
+  font-weight: bold;
 }
 
 .score {
-margin-top: 60px;
+  margin-top: 60px;
 }
 
 .reset-score-button,
-.auto-play-button {
-background-color: white;
-border: none;
-font-size: 15px;
-padding: 10px 20px;
-border-radius: 5px;
-cursor: pointer;
-transition: background-color 0.3s ease;
+.auto-play-button,
+.reset-confirm-button {
+  background-color: white;
+  border: none;
+  font-size: 15px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .reset-score-button:hover,
 .auto-play-button:hover {
-background-color: rgba(215, 208, 0, 0.7);
+  background-color: rgba(215, 208, 0, 0.7);
 }
 
 .reset-score-button:active,
 .auto-play-button:active {
-padding: 8px 18px;
+  padding: 8px 18px;
+}
+
+.reset-confirm-button {
+  margin-left: 10px;
 }
 
 @media (max-width: 600px) {
